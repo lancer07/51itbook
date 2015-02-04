@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title><%= siteTitle %></title>
+		<meta name="Keywords" content="<%= siteKeywords %>" />
+		<meta name="Description" content="<%= siteDescription %>" />
+		<link rel="stylesheet" type="text/css" href="../vendor/bootstrap/css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="../css/main.css">
+
+		<script src="../vendor/bootstrap/css/bootstrap.min.js" type="text/javascript" charset="utf-8" async defer></script>
+	</head>
+	<body>
+		<nav role="navigation" class="navbar navbar-default navbar-fixed-top">
+	      <div class="container-fluid">
+	        <!-- Brand and toggle get grouped for better mobile display -->
+	        <div class="navbar-header">
+	          <a href="/" >
+				<img src="/images/logo.jpg" width="50" /> 
+				<span>51 IT Books</span>
+	          </a>
+	        </div>
+
+	        <!-- Collect the nav links, forms, and other content for toggling -->
+	        <div id="bs-example-navbar-collapse-1" class="collapse navbar-collapse">
+	          <form class="navbar-form navbar-left" method="post" action="/list">
+	            <div class="form-group">
+	              <input type="text" class="form-control" name="searchWord" id="searchWord" placeholder="书名/关键词" required="required" style="width:400px">
+	            </div>
+	             <input class="btn btn-primary" type="submit" value="搜索" />
+	          </form>
+	        </div><!-- /.navbar-collapse -->
+	      </div><!-- /.container-fluid -->
+	    </nav>
+
+
+	    <div class="container" style="margin-top:40px;">
+	    	<div class="page-header">
+			  <h1><%= bookTit %></h1>
+			</div>
+			<div class="row">
+				<div class="col-xs-6 col-md-3">
+			    	<span class="thumbnail">
+			    		<img alt="<%= bookTit %>" src="<%= bookSrc %>" width="100%">
+			    	</span>
+				</div>
+
+				<div class="col-xs-6 col-md-9">
+				 	<p><%- bookInfo %></p>
+				 	<div class="star">
+			        	<div style="width:<%= bookStar %>%"></div>
+			        </div>
+				 	<a href="<%= bookDownload %>" class="btn btn-primary" role="button" target="_blank">
+				 		下载
+				 	</a>
+				 	<div style="margin-top:10px">
+				 		密码：<%= bookPassword %>
+				 	</div>
+				 	<!-- JiaThis Button BEGIN -->
+					<div class="jiathis_style_32x32" style="margin-top:30px">
+						<a class="jiathis_button_weixin"></a>
+						<a class="jiathis_button_tsina"></a>
+						<a class="jiathis_button_tqq"></a>
+						<a class="jiathis_button_yixin"></a>
+						<a class="jiathis_button_tsohu"></a>
+						<a class="jiathis_button_douban"></a>
+						<a class="jiathis_button_miliao"></a>
+						<a class="jiathis_button_sdonote"></a>
+						<a class="jiathis_button_tieba"></a>
+						<a class="jiathis_button_cqq"></a>
+						<a class="jiathis_button_email"></a>
+						<a class="jiathis_button_fav"></a>
+						<a class="jiathis_button_copy"></a>
+						<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+						<a class="jiathis_counter_style"></a>
+					</div>
+					<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+					<!-- JiaThis Button END -->
+				</script>
+
+
+			</div>
+			
+			<!--高速版，加载速度快，使用前需测试页面的兼容性-->
+			
+			<div id="SOHUCS" sid="<%= bookId %>"></div>
+			<script>
+			  (function(){
+			    var appid = 'cyrB841zA',
+			    conf = 'prod_a814f375a304e53f2bccd56c5fa53245';
+			    var doc = document,
+			    s = doc.createElement('script'),
+			    h = doc.getElementsByTagName('head')[0] || doc.head || doc.documentElement;
+			    s.type = 'text/javascript';
+			    s.charset = 'utf-8';
+			    s.src =  'http://assets.changyan.sohu.com/upload/changyan.js?conf='+ conf +'&appid=' + appid;
+			    h.insertBefore(s,h.firstChild);
+			    window.SCS_NO_IFRAME = true;
+			  })()
+			</script> 
+			
+		</div>
+		<%- include footer %>
+	</body>
+</html>

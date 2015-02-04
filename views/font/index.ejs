@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title><%= siteTitle %></title>
+		<meta name="Keywords" content="<%= siteKeywords %>" />
+		<meta name="Description" content="<%= siteDescription %>" />
+		<link rel="stylesheet" type="text/css" href="/vendor/bootstrap/css/bootstrap.css">
+		<style type="text/css" media="screen">
+			#hotSearch span{
+				cursor:pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="col-lg-6 col-md-offset-3">
+				<h1 class="text-center">
+					<img src="/images/logo.jpg" width="250" />
+				</h1>
+				<form method="post" action="/list" id="searchForm" />
+			    	<div class="input-group">
+				      <input type="text" class="form-control" name="searchWord" id="searchWord" placeholder="书名/关键词" required="required" >
+				      <span class="input-group-btn">
+				        <input class="btn btn-primary" type="submit" value="搜索" style="padding:6px 30px" />
+				      </span>
+				    </div>
+			    </form>
+			   
+			    <div style="margin-top:10px;" id="hotSearch">
+			    	热搜：
+			    	<span class="label label-warning">JavaScript</span>
+		    		<span class="label label-warning">jQuery</span>
+		    		<span class="label label-warning">CSS</span>
+		    		<span class="label label-warning">ActionScript</span>
+		    		<span class="label label-warning">SEO</span>
+		    		<span class="label label-warning">AJAX</span>
+		    		<span class="label label-warning">PHP</span>
+		    		<span class="label label-warning">Ruby</span>
+			    </div>
+			    <script type="text/javascript">
+			   	 	var hotLinks = document.getElementById("hotSearch").getElementsByTagName("span");
+			   	 	for(var i=0; i<hotLinks.length;i++){
+			   	 		hotLinks[i].onclick =function(e){
+			   	 			document.getElementById("searchWord").value = this.innerHTML;
+			   	 			document.getElementById("searchForm").submit();
+			   	 		}
+			   	 	}
+			    </script>
+			</div>
+		</div>
+		<div class="navbar-fixed-bottom">
+			<%- include footer %>
+		</div>
+	</body>
+</html>

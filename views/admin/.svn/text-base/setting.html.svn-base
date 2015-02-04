@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>IT Books</title>
+		<meta name="Keywords" content="IT Books" />
+		<meta name="Description" content="IT Books" />
+		<link rel="stylesheet" type="text/css" href="../../public/vendor/bootstrap/css/bootstrap.css">
+	</head>
+	<body>
+		<nav role="navigation" class="navbar navbar-default">
+	      <div class="container-fluid">
+	        <!-- Brand and toggle get grouped for better mobile display -->
+	        <div class="navbar-header">
+	          <a href="#" class="navbar-brand">
+				我爱自学
+	          </a>
+	        </div>
+	        <!-- Collect the nav links, forms, and other content for toggling -->
+	        <p class="navbar-text navbar-right">
+	        	<a class="navbar-link" href="#" style="margin-right:10px">安全退出</a> 
+	        </p>
+	      </div><!-- /.container-fluid -->
+	    </nav>
+		<div class="container">
+			<div class="col-md-2">
+				<ul class="nav nav-pills nav-stacked">
+					<li role="presentation"><a href="#">产品列表</a></li>
+			    	<li role="presentation"><a href="#">发布资料</a></li>
+			    	<li class="active" role="presentation"><a href="#">基本配置</a></li>
+			    </ul>
+			</div>
+
+			<div class="col-md-10">
+				<form role="form">
+				  <div class="form-group">
+				    <label for="tit">标题</label>
+				    <input type="text" class="form-control" id="tit" >
+				  </div>
+				  
+				  <div class="form-group">
+				    <label for="tit">关键字</label>
+				    <input type="text" class="form-control" id="tit" >
+				  </div>
+				  <div class="form-group">
+				    <label for="tit">描述</label>
+				    <input type="text" class="form-control" id="tit" >
+				  </div>
+				  
+				  <div class="form-group">
+				    <label for="tit">版权信息</label>
+				    <input type="text" class="form-control" id="tit" >
+				  </div>
+
+
+				  <button type="submit" class="btn btn-default">提交</button>
+				</form>
+
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,10 @@
+.star{
+	width: 90px;
+	height: 18px;
+	margin-bottom: 10px;
+	background:url(../images/stars.gif) repeat-x left top;
+}
+.star>div{
+	height: 18px;
+	background:url(../images/stars.gif) repeat-x left bottom;
+}

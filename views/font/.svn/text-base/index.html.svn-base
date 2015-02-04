@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>IT Books</title>
+		<meta name="Keywords" content="IT Books" />
+		<meta name="Description" content="IT Books" />
+		<link rel="stylesheet" type="text/css" href="../../public/vendor/bootstrap/css/bootstrap.css">
+
+	</head>
+	<body>
+		<div class="container">
+			<div class="col-lg-6 col-md-offset-3">
+				<h1 class="text-center">
+					<img src="../../public/images/logo.jpg" />
+				</h1>
+			    <div class="input-group">
+			      <input type="text" class="form-control">
+			      <span class="input-group-btn">
+			        <button class="btn btn-primary" type="button" style="padding:6px 30px">搜索</button>
+			      </span>
+			    </div>
+
+			    <div style="margin-top:10px;">
+			    	热搜：
+			    	<a href="#">
+			    		<span class="label label-warning">javascript</span>
+			    	</a>
+			    	<a href="#" class=" btn-link">
+			    		<span class="label label-warning">jQuery</span>
+			    	</a>
+			    	<a href="#" class=" btn-link">
+			    		<span class="label label-warning">AngularJS</span>
+			    	</a>
+			    	<a href="#" class=" btn-link">
+			    		<span class="label label-warning">Node</span>
+			    	</a>
+			    	<a href="#" class=" btn-link">
+			    		<span class="label label-warning">EXT</span>
+			    	</a>
+			    	<a href="#" class=" btn-link">
+			    		<span class="label label-warning">PHP</span>
+			    	</a>
+			    	<a href="#" class=" btn-link">
+			    		<span class="label label-warning">codeIgniter</span>
+			    	</a>
+			    	<a href="#" class=" btn-link">
+			    		<span class="label label-warning">Ruby On Rails</span>
+			    	</a>
+			    </div>
+			</div>
+
+		</div>
+	</body>
+</html>

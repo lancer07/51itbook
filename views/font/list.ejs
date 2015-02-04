@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title><%= siteTitle %></title>
+		<meta name="Keywords" content="<%= siteKeywords %>" />
+		<meta name="Description" content="<%= siteDescription %>" />
+		<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<script src="vendor/jquery-1.9.1.min.js" type="text/javascript"></script>
+		<script src="vendor/masonry.pkgd.min.js" type="text/javascript"></script>		
+
+	</head>
+	<body>
+		<nav role="navigation" class="navbar navbar-default navbar-fixed-top">
+	      <div class="container-fluid">
+	        <!-- Brand and toggle get grouped for better mobile display -->
+	        <div class="navbar-header">
+	          <a href="/" >
+				<img src="/images/logo.jpg" width="50" /> 
+				<span>51 IT Books</span>
+	          </a>
+	        </div>
+	        <!-- Collect the nav links, forms, and other content for toggling -->
+	        <div id="bs-example-navbar-collapse-1" class="collapse navbar-collapse">
+	          <form class="navbar-form navbar-left" method="post" action="/list">
+	            <div class="form-group">
+	              <input type="text" class="form-control" name="searchWord" id="searchWord" placeholder="书名/关键词" required="required" style="width:400px">
+	            </div>
+	             <input class="btn btn-primary" type="submit" value="搜索" />
+	          </form>
+	        </div><!-- /.navbar-collapse -->
+	      </div><!-- /.container-fluid -->
+	    </nav>
+	    <div id="masonry" class="container-fluid" style="margin:80px auto 80px auto;">
+			<div class="row">
+				<% if (books.length == 0){%>
+					<div class="container" style="margin-bottom:100px">
+						<div class="text-center">
+							<img src="/images/404.jpg" width="400" />
+						</div>
+						<div class="alert alert-warning" role="alert">
+							<p class="text-center">不好意思，我们会尽快添加此类书籍</p>
+						</div>
+					</div>
+				<% }%>
+
+				<% books.forEach(function(book,index){ %>
+		   		<div class="col-sm-4 col-md-3 col-lg-2 item">
+				    <div class="thumbnail">
+				      <a href="/result/<%= book.id %>" target="_blank">
+				      	<img data-src="<%= book.src %>" src="<%= book.src %>" alt="<%= book.name %>" class="img-responsive" width="100%">
+				      </a>
+				      <div class="caption">
+				        <h5><%= book.name %></h5>
+				       
+				        <div class="star">
+				        	<div style="width:<%= book.star %>%"></div>
+				        </div>
+				        <p>
+				        	<a href="/result/<%= book.id %>" target="_blank" class="btn btn-primary" role="button">查看详情</a>
+				        </p>
+				      </div>
+				    </div>
+				</div>
+				<% }) %>
+			</div>
+		</div>
+
+		<script>
+		    var $container = $('#masonry'); 
+	        $container.masonry({  
+	            itemSelector : '.item',
+	            gutter: 0,
+	            columnWidth: 0,
+	            resizeable: true, 
+	            singleMode: true
+	        });  
+		    
+			   
+		</script>
+
+		<div class="navbar-fixed-bottom">
+			<%- include footer %>
+		</div>
+	</body>
+</html>

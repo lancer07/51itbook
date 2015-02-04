@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>列表</title>
+		<link rel="stylesheet" type="text/css" href="../vendor/bootstrap/css/bootstrap.css">
+	</head>
+	<body>
+		<nav role="navigation" class="navbar navbar-default">
+	      <div class="container-fluid">
+	        <!-- Brand and toggle get grouped for better mobile display -->
+	        <div class="navbar-header">
+	         <a href="/" >
+				<img src="/images/logo.jpg" width="50" /> 
+				<span>IT Books</span>
+	          </a>
+	        </div>
+	        <!-- Collect the nav links, forms, and other content for toggling -->
+	        <p class="navbar-text navbar-right">
+	        	<a class="navbar-link" href="/logout" style="margin-right:10px">安全退出</a> 
+	        </p>
+	      </div><!-- /.container-fluid -->
+	    </nav>
+		<div class="container">
+			<div class="col-md-2">
+				<ul class="nav nav-pills nav-stacked">
+					<li class="active" role="presentation"><a href="list">产品列表</a></li>
+			    	<li role="presentation"><a href="add">发布资料</a></li>
+			    	<li role="presentation"><a href="settings">基本配置</a></li>
+			    	<li role="presentation"><a href="http://changyan.sohu.com/audit/comments/AUDITED/1" target="_blank">留言管理</a></li>
+			    	<li role="presentation"><a href="#" target="_blank">IP/PV统计</a></li>
+			    </ul>
+			</div>
+
+			<div class="col-md-10">
+				<form method="post" action="/admin/list">
+					<div class="input-group">
+						<input type="text" class="form-control" name="searchWord" id="searchWord" placeholder="书名" required="required" />
+					    <span class="input-group-btn">
+					    	<input class="btn btn-primary" type="submit" value="搜索" />
+					    </span>
+				    </div>
+			    </form>
+			    <table class="table table-striped" style="margin-top:20px;">
+			    	<col width="10%" />
+			    	<col width="20%" />
+			    	<col width="" />
+			    	<col width="25%" />
+			      <thead>
+			        <tr>
+			          <th>序号</th>
+			          <th>缩略图</th>
+			          <th>标题</th>
+			          <th>操作</th>
+			        </tr>
+			      </thead>
+			      <tbody>
+
+			      <% books.forEach(function(book,index){ %>
+			        <tr>
+			          <td><%= book.id %></td>
+			          <td>
+			          	<img src="<%= book.src %>" alt="..." height="50">
+			          </td>
+			          <td>
+			          	<%= book.name %>
+			          </td>
+			          <td>
+			          	<a class="btn btn-info" href="/result/<%= book.id %>" target="_blank">查看</a>
+			          	<a class="btn btn-warning" href="/admin/update/<%= book.id %>">编辑</a>
+				    	<a class="btn btn-danger" href="/admin/remove/<%= book.id %>">删除</a>
+			          </td>
+			        </tr>
+			       <% }) %>
+			      </tbody>
+			    </table>
+			</div>
+		</div>
+	</body>
+</html>

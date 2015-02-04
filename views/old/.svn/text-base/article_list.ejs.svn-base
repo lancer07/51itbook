@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<title><%= title %></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link rel='stylesheet' href='/vendor/bootstrap/css/bootstrap.css' />
+  </head>
+  <body>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-2">
+				<%- include nav %>
+			</div>
+			<div class="col-xs-10">
+				<h1><%= title %></h1>
+				<ul class="list-group">
+				<% articles.forEach(function(article,index){ %>
+					<li class="list-group-item ">
+						<span class="pull-right ">
+							<a href="/article_edit?id=<%= article.id %>" class="btn btn-warning">编辑</a>
+							<a href="/article_del?id=<%= article.id %>" class="btn btn-danger">删除</a>
+						</span>
+						<a href="/article?id=<%= article.id %>"><%= article.tit %></a>
+						<span>
+							<%= article.time.year %>/<%= article.time.month %>/<%= article.time.day %>
+						</span>
+						<div class="clearfix"></div>
+					</li>
+				<% }) %>
+				</ul>
+				<a href="/post" class="btn btn-success">发布新文章</a>
+
+			</div>
+		</div>
+	</div>
+
+  </body>
+</html>
+
+
+
+
+			   	

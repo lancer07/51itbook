@@ -1,0 +1,5 @@
+<footer class="navbar navbar-default" style="margin-bottom:0">
+	<p class="navbar-text text-center" style="float:none;">
+		<%= siteCorpright %>
+    </p>
+</footer>
